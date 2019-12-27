@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace NickDIDemo.Services.Infantry
 {
     /// <summary>
-    /// 步兵
+    /// 由於步兵沒有人玩，所以進行技能強化改版
     /// </summary>
-    public class Infantry : IInfantry
+    public class PowerfulInfantry : IInfantry
     {
         public void Guard()
         {
-            Console.WriteLine("進行防禦!!");
+            Console.WriteLine("我是改版後的防禦技能，超級逆天!!進行防禦，並反彈所受傷害25%!!");
         }
     }
 }

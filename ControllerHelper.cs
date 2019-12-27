@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
@@ -12,7 +13,7 @@ namespace NickDIDemo
 {
     public static class ControllerHelper
     {
-        public static ArmyCommandController ArmyCommandController { get; set; }
+        public static ArmyCommandController ArmyCommandController { get; private set; }
 
         static ControllerHelper()
         {
@@ -27,10 +28,13 @@ namespace NickDIDemo
             ContainerBuilder builder = new ContainerBuilder();
 
             builder.RegisterType<ArmyCommandController>();
+
             builder.RegisterType<Archer>().As<IArcher>();
             builder.RegisterType<Cavalry>().As<ICavalry>();
-            builder.RegisterType<Infantry>().As<IInfantry>();
 
+            //步兵技能改版，抽換步兵的實作
+            //builder.RegisterType<Infantry>().As<IInfantry>();
+            builder.RegisterType<PowerfulInfantry>().As<IInfantry>();
 
             IContainer container = builder.Build();
 

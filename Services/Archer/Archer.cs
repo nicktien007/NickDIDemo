@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NickDIDemo.Services.Archer
 {
+    /// <summary>
+    /// 弓兵
+    /// </summary>
     public class Archer : IArcher
     {
         public void MultiShot()

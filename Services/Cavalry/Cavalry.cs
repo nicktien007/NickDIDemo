@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NickDIDemo.Services.Cavalry
 {
+    /// <summary>
+    /// 騎兵
+    /// </summary>
     public class Cavalry : ICavalry
     {
         public void Charge()
